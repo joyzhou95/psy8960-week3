@@ -11,3 +11,4 @@ clean_df <- clean_df[clean_df$q6 == 1,]
 #Analysis
 clean_df$timeSpent <- difftime(clean_df$timeEnd, clean_df$timeStart, units = "mins")
 hist(as.numeric(clean_df$timeSpent))
+frequency_tables_list <- lapply(clean_df[,5:14], table)
